@@ -73,3 +73,16 @@ tabs.forEach(tab=>{
         tab.classList.add('qualification__active')
     })
 })
+
+
+function sendMail(){
+    var params = {
+        name : document.getElementById("fullName").value,
+        email_id : document.getElementById("email_id").value,
+        message : document.getElementById("message").value
+    }
+    emailjs.send("service_crzlmqv", "template_ozzcnwt", params).then((res) => {
+        swal("Thank You for reaching out!", "I will reply as soon as possible.", "success");
+        // swal("Success! " + res.status)
+    })
+}
