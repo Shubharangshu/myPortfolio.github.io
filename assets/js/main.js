@@ -79,7 +79,8 @@ function sendMail(){
     var params = {
         name : document.getElementById("fullName").value,
         email_id : document.getElementById("email_id").value,
-        message : document.getElementById("message").value
+        message : document.getElementById("message").value,
+        myForm: document.getElementById("myForm").reset()
     }
     emailjs.send("service_crzlmqv", "template_ozzcnwt", params).then((res) => {
         swal("Thank You for reaching out!", "I will reply as soon as possible.", "success");
